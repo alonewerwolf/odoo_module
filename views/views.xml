@@ -1,0 +1,80 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="footballer_form">
+      <field name="name">my_module.footballer.form</field>
+      <field name="model">my_module.footballer</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="age"/>
+            <field name="description"/>
+            <field  name="image"/>
+            <field  name="footballer_number"/>
+            <field  name="footballer_id"/>
+        </tree>
+      </field>
+    </record>
+
+       <record model="ir.ui.view" id="football_club_form">
+      <field name="name">my_module.football_club.form</field>
+      <field name="model">my_module.football_club</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="image"/>
+          <field name="football_club"/>
+          <field name="description"/>
+            <field  name="fc_id"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="action_footballer">
+      <field name="name">footballer window</field>
+      <field name="res_model">my_module.footballer</field>
+        <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.ui.view" id="view_task_search_form_inherited">
+            <field name="name">project.task.search.form.inherited</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="view_task_search_form" />
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//field[@name='name']" position="after">
+                    <field  name="name"/>
+                    <field  name="age"/>
+                    <field  name="image"/>
+                    <field  name="footbaler_number"/>
+                </xpath>
+
+            </field>
+        </record>
+-->
+    <!-- Top menu item -->
+
+    <menuitem name="my_module" id="my_module.footballer"/>
+
+
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="my_module.menu_1" parent="my_module.menu_root"/>
+    <menuitem name="Menu 2" id="my_module.menu_2" parent="my_module.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="my_module.menu_1_list" parent="my_module.menu_1"
+              action="my_module.action_window"/>
+    <menuitem name="Server to list" id="my_module" parent="my_module.menu_2"
+              action="my_module.action_server"/>
+-->
+  </data>
+</odoo>
